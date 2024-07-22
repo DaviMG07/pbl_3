@@ -1,0 +1,455 @@
+Analysis & Synthesis report for last_pbl
+Sun Jul 21 23:48:36 2024
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "driver_display:comb_3|counter_3_0:comb_3|flip_flop_T:comb_3"
+ 11. Port Connectivity Checks: "driver_display:comb_3|counter_3_0:comb_3"
+ 12. Port Connectivity Checks: "driver_display:comb_3"
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sun Jul 21 23:48:36 2024       ;
+; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name               ; last_pbl                                    ;
+; Top-level Entity Name       ; display_group                               ;
+; Family                      ; MAX II                                      ;
+; Total logic elements        ; 27                                          ;
+; Total pins                  ; 21                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
++-----------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EPM240T100C5       ;                    ;
+; Top-level entity name                                            ; display_group      ; last_pbl           ;
+; Family name                                                      ; MAX II             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                               ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                 ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------+---------+
+; src/mux/mux_32_2_8.v             ; yes             ; User Verilog HDL File  ; /home/davi/Projects/last_pbl/src/mux/mux_32_2_8.v            ;         ;
+; src/main_groups/display_group.v  ; yes             ; User Verilog HDL File  ; /home/davi/Projects/last_pbl/src/main_groups/display_group.v ;         ;
+; src/drivers/driver_display.v     ; yes             ; User Verilog HDL File  ; /home/davi/Projects/last_pbl/src/drivers/driver_display.v    ;         ;
+; src/decoders/units_decoder.v     ; yes             ; User Verilog HDL File  ; /home/davi/Projects/last_pbl/src/decoders/units_decoder.v    ;         ;
+; src/decoders/states_decoder.v    ; yes             ; User Verilog HDL File  ; /home/davi/Projects/last_pbl/src/decoders/states_decoder.v   ;         ;
+; src/decoders/dozens_decoder.v    ; yes             ; User Verilog HDL File  ; /home/davi/Projects/last_pbl/src/decoders/dozens_decoder.v   ;         ;
+; src/mux/mux_4_2_1.v              ; yes             ; User Verilog HDL File  ; /home/davi/Projects/last_pbl/src/mux/mux_4_2_1.v             ;         ;
+; src/mux/mux_2_1_1.v              ; yes             ; User Verilog HDL File  ; /home/davi/Projects/last_pbl/src/mux/mux_2_1_1.v             ;         ;
+; src/flip_flops/flip_flop_T.v     ; yes             ; User Verilog HDL File  ; /home/davi/Projects/last_pbl/src/flip_flops/flip_flop_T.v    ;         ;
+; src/decoders/decoder_2_4.v       ; yes             ; User Verilog HDL File  ; /home/davi/Projects/last_pbl/src/decoders/decoder_2_4.v      ;         ;
+; src/counters/counter_3_0.v       ; yes             ; User Verilog HDL File  ; /home/davi/Projects/last_pbl/src/counters/counter_3_0.v      ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                 ;
++---------------------------------------------+---------------------------------------------------------------+
+; Resource                                    ; Usage                                                         ;
++---------------------------------------------+---------------------------------------------------------------+
+; Total logic elements                        ; 27                                                            ;
+;     -- Combinational with no register       ; 25                                                            ;
+;     -- Register only                        ; 0                                                             ;
+;     -- Combinational with a register        ; 2                                                             ;
+;                                             ;                                                               ;
+; Logic element usage by number of LUT inputs ;                                                               ;
+;     -- 4 input functions                    ; 16                                                            ;
+;     -- 3 input functions                    ; 5                                                             ;
+;     -- 2 input functions                    ; 5                                                             ;
+;     -- 1 input functions                    ; 1                                                             ;
+;     -- 0 input functions                    ; 0                                                             ;
+;                                             ;                                                               ;
+; Logic elements by mode                      ;                                                               ;
+;     -- normal mode                          ; 27                                                            ;
+;     -- arithmetic mode                      ; 0                                                             ;
+;     -- qfbk mode                            ; 0                                                             ;
+;     -- register cascade mode                ; 0                                                             ;
+;     -- synchronous clear/load mode          ; 0                                                             ;
+;     -- asynchronous clear/load mode         ; 0                                                             ;
+;                                             ;                                                               ;
+; Total registers                             ; 2                                                             ;
+; I/O pins                                    ; 21                                                            ;
+; Maximum fan-out node                        ; driver_display:comb_3|counter_3_0:comb_3|flip_flop_T:comb_3|Q ;
+; Maximum fan-out                             ; 14                                                            ;
+; Total fan-out                               ; 103                                                           ;
+; Average fan-out                             ; 2.15                                                          ;
++---------------------------------------------+---------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                            ;
++--------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node     ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                      ; Entity Name    ; Library Name ;
++--------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------+----------------+--------------+
+; |display_group                 ; 27 (0)      ; 2            ; 0          ; 21   ; 0            ; 25 (0)       ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |display_group                                                                           ; display_group  ; work         ;
+;    |driver_display:comb_3|     ; 27 (0)      ; 2            ; 0          ; 0    ; 0            ; 25 (0)       ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3                                                     ; driver_display ; work         ;
+;       |counter_3_0:comb_3|     ; 2 (0)       ; 2            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|counter_3_0:comb_3                                  ; counter_3_0    ; work         ;
+;          |flip_flop_T:comb_3|  ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|counter_3_0:comb_3|flip_flop_T:comb_3               ; flip_flop_T    ; work         ;
+;          |flip_flop_T:comb_4|  ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|counter_3_0:comb_3|flip_flop_T:comb_4               ; flip_flop_T    ; work         ;
+;       |decoder_2_4:comb_4|     ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|decoder_2_4:comb_4                                  ; decoder_2_4    ; work         ;
+;       |mux_32_2_8:comb_9|      ; 21 (0)      ; 0            ; 0          ; 0    ; 0            ; 21 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9                                   ; mux_32_2_8     ; work         ;
+;          |mux_4_2_1:comb_3|    ; 4 (0)       ; 0            ; 0          ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_3                  ; mux_4_2_1      ; work         ;
+;             |mux_2_1_1:comb_5| ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_3|mux_2_1_1:comb_5 ; mux_2_1_1      ; work         ;
+;          |mux_4_2_1:comb_4|    ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_4                  ; mux_4_2_1      ; work         ;
+;             |mux_2_1_1:comb_5| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_4|mux_2_1_1:comb_5 ; mux_2_1_1      ; work         ;
+;          |mux_4_2_1:comb_5|    ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_5                  ; mux_4_2_1      ; work         ;
+;             |mux_2_1_1:comb_5| ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_5|mux_2_1_1:comb_5 ; mux_2_1_1      ; work         ;
+;          |mux_4_2_1:comb_6|    ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_6                  ; mux_4_2_1      ; work         ;
+;             |mux_2_1_1:comb_5| ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_6|mux_2_1_1:comb_5 ; mux_2_1_1      ; work         ;
+;          |mux_4_2_1:comb_7|    ; 3 (0)       ; 0            ; 0          ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_7                  ; mux_4_2_1      ; work         ;
+;             |mux_2_1_1:comb_5| ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_7|mux_2_1_1:comb_5 ; mux_2_1_1      ; work         ;
+;          |mux_4_2_1:comb_8|    ; 2 (0)       ; 0            ; 0          ; 0    ; 0            ; 2 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_8                  ; mux_4_2_1      ; work         ;
+;             |mux_2_1_1:comb_5| ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_8|mux_2_1_1:comb_5 ; mux_2_1_1      ; work         ;
+;          |mux_4_2_1:comb_9|    ; 4 (0)       ; 0            ; 0          ; 0    ; 0            ; 4 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_9                  ; mux_4_2_1      ; work         ;
+;             |mux_2_1_1:comb_5| ; 4 (4)       ; 0            ; 0          ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_9|mux_2_1_1:comb_5 ; mux_2_1_1      ; work         ;
++--------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_3|mux_2_1_1:comb_5|x ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "driver_display:comb_3|counter_3_0:comb_3|flip_flop_T:comb_3" ;
++--------+-------+----------+-------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                     ;
++--------+-------+----------+-------------------------------------------------------------+
+; toggle ; Input ; Info     ; Stuck at VCC                                                ;
++--------+-------+----------+-------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "driver_display:comb_3|counter_3_0:comb_3" ;
++--------+-------+----------+------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                  ;
++--------+-------+----------+------------------------------------------+
+; preset ; Input ; Info     ; Explicitly unconnected                   ;
+; reset  ; Input ; Info     ; Explicitly unconnected                   ;
++--------+-------+----------+------------------------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "driver_display:comb_3"  ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; digitD ; Input ; Info     ; Explicitly unconnected ;
++--------+-------+----------+------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Sun Jul 21 23:48:04 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off last_pbl -c last_pbl
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file src/mux/mux_32_2_8.v
+    Info (12023): Found entity 1: mux_32_2_8 File: /home/davi/Projects/last_pbl/src/mux/mux_32_2_8.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/main_groups/display_group.v
+    Info (12023): Found entity 1: display_group File: /home/davi/Projects/last_pbl/src/main_groups/display_group.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/frequency_divider/frequency_divider.v
+    Info (12023): Found entity 1: frequency_divider File: /home/davi/Projects/last_pbl/src/frequency_divider/frequency_divider.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/frequency_divider/divider_by_two.v
+    Info (12023): Found entity 1: divider_by_two File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_two.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/frequency_divider/divider_by_three.v
+    Info (12023): Found entity 1: divider_by_three File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_three.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/frequency_divider/divider_by_ten.v
+    Info (12023): Found entity 1: divider_by_ten File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_ten.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/frequency_divider/divider_by_seven.v
+    Info (12023): Found entity 1: divider_by_seven File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_seven.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/frequency_divider/divider_by_five.v
+    Info (12023): Found entity 1: divider_by_five File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_five.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/drivers/driver_display.v
+    Info (12023): Found entity 1: driver_display File: /home/davi/Projects/last_pbl/src/drivers/driver_display.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/decoders/units_decoder.v
+    Info (12023): Found entity 1: units_decoder File: /home/davi/Projects/last_pbl/src/decoders/units_decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/decoders/states_decoder.v
+    Info (12023): Found entity 1: states_decoder File: /home/davi/Projects/last_pbl/src/decoders/states_decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/decoders/dozens_decoder.v
+    Info (12023): Found entity 1: dozens_decoder File: /home/davi/Projects/last_pbl/src/decoders/dozens_decoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/utils/main_irrigation.v
+    Info (12023): Found entity 1: main_irrigation File: /home/davi/Projects/last_pbl/src/utils/main_irrigation.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/utils/gen_preset.v
+    Info (12023): Found entity 1: gen_preset File: /home/davi/Projects/last_pbl/src/utils/gen_preset.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/state_machines/main_state_machine.v
+    Info (12023): Found entity 1: main_state_machine File: /home/davi/Projects/last_pbl/src/state_machines/main_state_machine.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/state_machines/level_to_pulse.v
+    Info (12023): Found entity 1: level_to_pulse File: /home/davi/Projects/last_pbl/src/state_machines/level_to_pulse.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/mux/mux_4_2_1.v
+    Info (12023): Found entity 1: mux_4_2_1 File: /home/davi/Projects/last_pbl/src/mux/mux_4_2_1.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/mux/mux_2_1_1.v
+    Info (12023): Found entity 1: mux_2_1_1 File: /home/davi/Projects/last_pbl/src/mux/mux_2_1_1.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/main_groups/water_box_group.v
+    Info (12023): Found entity 1: water_box_group File: /home/davi/Projects/last_pbl/src/main_groups/water_box_group.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/main_groups/state_machine_group.v
+    Info (12023): Found entity 1: state_machine_group File: /home/davi/Projects/last_pbl/src/main_groups/state_machine_group.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/main_groups/irrigation_group.v
+    Info (12023): Found entity 1: irrigation_group File: /home/davi/Projects/last_pbl/src/main_groups/irrigation_group.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/flip_flops/flip_flop_T.v
+    Info (12023): Found entity 1: flip_flop_T File: /home/davi/Projects/last_pbl/src/flip_flops/flip_flop_T.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/flip_flops/flip_flop_D.v
+    Info (12023): Found entity 1: flip_flop_D File: /home/davi/Projects/last_pbl/src/flip_flops/flip_flop_D.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/encoders/encoder_water_box.v
+    Info (12023): Found entity 1: encoder_water_box File: /home/davi/Projects/last_pbl/src/encoders/encoder_water_box.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/encoders/encoder_irrigation.v
+    Info (12023): Found entity 1: encoder_irrigation File: /home/davi/Projects/last_pbl/src/encoders/encoder_irrigation.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/decoders/decoder_2_4.v
+    Info (12023): Found entity 1: decoder_2_4 File: /home/davi/Projects/last_pbl/src/decoders/decoder_2_4.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file src/counters/dual_counter_0_7.v
+    Info (12023): Found entity 1: dual_counter_0_7 File: /home/davi/Projects/last_pbl/src/counters/dual_counter_0_7.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/counters/counter_30_0.v
+    Info (12023): Found entity 1: counter_30_0 File: /home/davi/Projects/last_pbl/src/counters/counter_30_0.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/counters/counter_9_0.v
+    Info (12023): Found entity 1: counter_9_0 File: /home/davi/Projects/last_pbl/src/counters/counter_9_0.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file src/counters/counter_3_0.v
+    Info (12023): Found entity 1: counter_3_0 File: /home/davi/Projects/last_pbl/src/counters/counter_3_0.v Line: 2
+Warning (10236): Verilog HDL Implicit Net warning at frequency_divider.v(13): created implicit net for "clock" File: /home/davi/Projects/last_pbl/src/frequency_divider/frequency_divider.v Line: 13
+Warning (10236): Verilog HDL Implicit Net warning at main_state_machine.v(45): created implicit net for "Go" File: /home/davi/Projects/last_pbl/src/state_machines/main_state_machine.v Line: 45
+Warning (10236): Verilog HDL Implicit Net warning at water_box_group.v(16): created implicit net for "preset" File: /home/davi/Projects/last_pbl/src/main_groups/water_box_group.v Line: 16
+Warning (10236): Verilog HDL Implicit Net warning at water_box_group.v(17): created implicit net for "reset" File: /home/davi/Projects/last_pbl/src/main_groups/water_box_group.v Line: 17
+Critical Warning (10846): Verilog HDL Instantiation warning at mux_4_2_1.v(13): instance has no name File: /home/davi/Projects/last_pbl/src/mux/mux_4_2_1.v Line: 13
+Critical Warning (10846): Verilog HDL Instantiation warning at mux_4_2_1.v(14): instance has no name File: /home/davi/Projects/last_pbl/src/mux/mux_4_2_1.v Line: 14
+Critical Warning (10846): Verilog HDL Instantiation warning at mux_4_2_1.v(15): instance has no name File: /home/davi/Projects/last_pbl/src/mux/mux_4_2_1.v Line: 15
+Critical Warning (10846): Verilog HDL Instantiation warning at mux_32_2_8.v(11): instance has no name File: /home/davi/Projects/last_pbl/src/mux/mux_32_2_8.v Line: 11
+Critical Warning (10846): Verilog HDL Instantiation warning at mux_32_2_8.v(12): instance has no name File: /home/davi/Projects/last_pbl/src/mux/mux_32_2_8.v Line: 12
+Critical Warning (10846): Verilog HDL Instantiation warning at mux_32_2_8.v(13): instance has no name File: /home/davi/Projects/last_pbl/src/mux/mux_32_2_8.v Line: 13
+Critical Warning (10846): Verilog HDL Instantiation warning at mux_32_2_8.v(14): instance has no name File: /home/davi/Projects/last_pbl/src/mux/mux_32_2_8.v Line: 14
+Critical Warning (10846): Verilog HDL Instantiation warning at mux_32_2_8.v(15): instance has no name File: /home/davi/Projects/last_pbl/src/mux/mux_32_2_8.v Line: 15
+Critical Warning (10846): Verilog HDL Instantiation warning at mux_32_2_8.v(16): instance has no name File: /home/davi/Projects/last_pbl/src/mux/mux_32_2_8.v Line: 16
+Critical Warning (10846): Verilog HDL Instantiation warning at mux_32_2_8.v(17): instance has no name File: /home/davi/Projects/last_pbl/src/mux/mux_32_2_8.v Line: 17
+Critical Warning (10846): Verilog HDL Instantiation warning at mux_32_2_8.v(18): instance has no name File: /home/davi/Projects/last_pbl/src/mux/mux_32_2_8.v Line: 18
+Critical Warning (10846): Verilog HDL Instantiation warning at counter_3_0.v(10): instance has no name File: /home/davi/Projects/last_pbl/src/counters/counter_3_0.v Line: 10
+Critical Warning (10846): Verilog HDL Instantiation warning at counter_3_0.v(11): instance has no name File: /home/davi/Projects/last_pbl/src/counters/counter_3_0.v Line: 11
+Critical Warning (10846): Verilog HDL Instantiation warning at driver_display.v(15): instance has no name File: /home/davi/Projects/last_pbl/src/drivers/driver_display.v Line: 15
+Critical Warning (10846): Verilog HDL Instantiation warning at driver_display.v(17): instance has no name File: /home/davi/Projects/last_pbl/src/drivers/driver_display.v Line: 17
+Critical Warning (10846): Verilog HDL Instantiation warning at driver_display.v(24): instance has no name File: /home/davi/Projects/last_pbl/src/drivers/driver_display.v Line: 24
+Critical Warning (10846): Verilog HDL Instantiation warning at display_group.v(20): instance has no name File: /home/davi/Projects/last_pbl/src/main_groups/display_group.v Line: 20
+Critical Warning (10846): Verilog HDL Instantiation warning at units_decoder.v(9): instance has no name File: /home/davi/Projects/last_pbl/src/decoders/units_decoder.v Line: 9
+Critical Warning (10846): Verilog HDL Instantiation warning at units_decoder.v(10): instance has no name File: /home/davi/Projects/last_pbl/src/decoders/units_decoder.v Line: 10
+Critical Warning (10846): Verilog HDL Instantiation warning at display_group.v(25): instance has no name File: /home/davi/Projects/last_pbl/src/main_groups/display_group.v Line: 25
+Critical Warning (10846): Verilog HDL Instantiation warning at states_decoder.v(8): instance has no name File: /home/davi/Projects/last_pbl/src/decoders/states_decoder.v Line: 8
+Critical Warning (10846): Verilog HDL Instantiation warning at display_group.v(30): instance has no name File: /home/davi/Projects/last_pbl/src/main_groups/display_group.v Line: 30
+Critical Warning (10846): Verilog HDL Instantiation warning at display_group.v(35): instance has no name File: /home/davi/Projects/last_pbl/src/main_groups/display_group.v Line: 35
+Critical Warning (10846): Verilog HDL Instantiation warning at divider_by_two.v(7): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_two.v Line: 7
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(13): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/frequency_divider.v Line: 13
+Critical Warning (10846): Verilog HDL Instantiation warning at divider_by_ten.v(9): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_ten.v Line: 9
+Critical Warning (10846): Verilog HDL Instantiation warning at divider_by_ten.v(10): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_ten.v Line: 10
+Critical Warning (10846): Verilog HDL Instantiation warning at divider_by_ten.v(11): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_ten.v Line: 11
+Critical Warning (10846): Verilog HDL Instantiation warning at divider_by_ten.v(12): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_ten.v Line: 12
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(16): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/frequency_divider.v Line: 16
+Critical Warning (10846): Verilog HDL Instantiation warning at divider_by_three.v(9): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_three.v Line: 9
+Critical Warning (10846): Verilog HDL Instantiation warning at divider_by_three.v(10): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_three.v Line: 10
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(19): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/frequency_divider.v Line: 19
+Critical Warning (10846): Verilog HDL Instantiation warning at divider_by_seven.v(9): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_seven.v Line: 9
+Critical Warning (10846): Verilog HDL Instantiation warning at divider_by_seven.v(10): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_seven.v Line: 10
+Critical Warning (10846): Verilog HDL Instantiation warning at divider_by_seven.v(11): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_seven.v Line: 11
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(22): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/frequency_divider.v Line: 22
+Critical Warning (10846): Verilog HDL Instantiation warning at divider_by_five.v(9): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_five.v Line: 9
+Critical Warning (10846): Verilog HDL Instantiation warning at divider_by_five.v(10): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_five.v Line: 10
+Critical Warning (10846): Verilog HDL Instantiation warning at divider_by_five.v(11): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/divider_by_five.v Line: 11
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(25): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/frequency_divider.v Line: 25
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(28): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/frequency_divider.v Line: 28
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(31): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/frequency_divider.v Line: 31
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(34): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/frequency_divider.v Line: 34
+Critical Warning (10846): Verilog HDL Instantiation warning at frequency_divider.v(37): instance has no name File: /home/davi/Projects/last_pbl/src/frequency_divider/frequency_divider.v Line: 37
+Critical Warning (10846): Verilog HDL Instantiation warning at main_irrigation.v(15): instance has no name File: /home/davi/Projects/last_pbl/src/utils/main_irrigation.v Line: 15
+Critical Warning (10846): Verilog HDL Instantiation warning at gen_preset.v(28): instance has no name File: /home/davi/Projects/last_pbl/src/utils/gen_preset.v Line: 28
+Critical Warning (10846): Verilog HDL Instantiation warning at main_state_machine.v(14): instance has no name File: /home/davi/Projects/last_pbl/src/state_machines/main_state_machine.v Line: 14
+Critical Warning (10846): Verilog HDL Instantiation warning at main_state_machine.v(15): instance has no name File: /home/davi/Projects/last_pbl/src/state_machines/main_state_machine.v Line: 15
+Critical Warning (10846): Verilog HDL Instantiation warning at main_state_machine.v(62): instance has no name File: /home/davi/Projects/last_pbl/src/state_machines/main_state_machine.v Line: 62
+Critical Warning (10846): Verilog HDL Instantiation warning at main_state_machine.v(63): instance has no name File: /home/davi/Projects/last_pbl/src/state_machines/main_state_machine.v Line: 63
+Critical Warning (10846): Verilog HDL Instantiation warning at level_to_pulse.v(15): instance has no name File: /home/davi/Projects/last_pbl/src/state_machines/level_to_pulse.v Line: 15
+Critical Warning (10846): Verilog HDL Instantiation warning at level_to_pulse.v(16): instance has no name File: /home/davi/Projects/last_pbl/src/state_machines/level_to_pulse.v Line: 16
+Critical Warning (10846): Verilog HDL Instantiation warning at dual_counter_0_7.v(13): instance has no name File: /home/davi/Projects/last_pbl/src/counters/dual_counter_0_7.v Line: 13
+Critical Warning (10846): Verilog HDL Instantiation warning at dual_counter_0_7.v(14): instance has no name File: /home/davi/Projects/last_pbl/src/counters/dual_counter_0_7.v Line: 14
+Critical Warning (10846): Verilog HDL Instantiation warning at dual_counter_0_7.v(15): instance has no name File: /home/davi/Projects/last_pbl/src/counters/dual_counter_0_7.v Line: 15
+Critical Warning (10846): Verilog HDL Instantiation warning at dual_counter_0_7.v(19): instance has no name File: /home/davi/Projects/last_pbl/src/counters/dual_counter_0_7.v Line: 19
+Critical Warning (10846): Verilog HDL Instantiation warning at dual_counter_0_7.v(20): instance has no name File: /home/davi/Projects/last_pbl/src/counters/dual_counter_0_7.v Line: 20
+Critical Warning (10846): Verilog HDL Instantiation warning at water_box_group.v(19): instance has no name File: /home/davi/Projects/last_pbl/src/main_groups/water_box_group.v Line: 19
+Critical Warning (10846): Verilog HDL Instantiation warning at water_box_group.v(29): instance has no name File: /home/davi/Projects/last_pbl/src/main_groups/water_box_group.v Line: 29
+Critical Warning (10846): Verilog HDL Instantiation warning at water_box_group.v(37): instance has no name File: /home/davi/Projects/last_pbl/src/main_groups/water_box_group.v Line: 37
+Critical Warning (10846): Verilog HDL Instantiation warning at counter_9_0.v(12): instance has no name File: /home/davi/Projects/last_pbl/src/counters/counter_9_0.v Line: 12
+Critical Warning (10846): Verilog HDL Instantiation warning at counter_9_0.v(13): instance has no name File: /home/davi/Projects/last_pbl/src/counters/counter_9_0.v Line: 13
+Critical Warning (10846): Verilog HDL Instantiation warning at counter_9_0.v(14): instance has no name File: /home/davi/Projects/last_pbl/src/counters/counter_9_0.v Line: 14
+Critical Warning (10846): Verilog HDL Instantiation warning at counter_9_0.v(15): instance has no name File: /home/davi/Projects/last_pbl/src/counters/counter_9_0.v Line: 15
+Critical Warning (10846): Verilog HDL Instantiation warning at counter_30_0.v(18): instance has no name File: /home/davi/Projects/last_pbl/src/counters/counter_30_0.v Line: 18
+Critical Warning (10846): Verilog HDL Instantiation warning at counter_30_0.v(25): instance has no name File: /home/davi/Projects/last_pbl/src/counters/counter_30_0.v Line: 25
+Critical Warning (10846): Verilog HDL Instantiation warning at state_machine_group.v(23): instance has no name File: /home/davi/Projects/last_pbl/src/main_groups/state_machine_group.v Line: 23
+Critical Warning (10846): Verilog HDL Instantiation warning at state_machine_group.v(32): instance has no name File: /home/davi/Projects/last_pbl/src/main_groups/state_machine_group.v Line: 32
+Critical Warning (10846): Verilog HDL Instantiation warning at state_machine_group.v(40): instance has no name File: /home/davi/Projects/last_pbl/src/main_groups/state_machine_group.v Line: 40
+Critical Warning (10846): Verilog HDL Instantiation warning at state_machine_group.v(47): instance has no name File: /home/davi/Projects/last_pbl/src/main_groups/state_machine_group.v Line: 47
+Critical Warning (10846): Verilog HDL Instantiation warning at irrigation_group.v(20): instance has no name File: /home/davi/Projects/last_pbl/src/main_groups/irrigation_group.v Line: 20
+Critical Warning (10846): Verilog HDL Instantiation warning at irrigation_group.v(27): instance has no name File: /home/davi/Projects/last_pbl/src/main_groups/irrigation_group.v Line: 27
+Info (12127): Elaborating entity "display_group" for the top level hierarchy
+Info (12128): Elaborating entity "driver_display" for hierarchy "driver_display:comb_3" File: /home/davi/Projects/last_pbl/src/main_groups/display_group.v Line: 20
+Info (12128): Elaborating entity "counter_3_0" for hierarchy "driver_display:comb_3|counter_3_0:comb_3" File: /home/davi/Projects/last_pbl/src/drivers/driver_display.v Line: 15
+Info (12128): Elaborating entity "flip_flop_T" for hierarchy "driver_display:comb_3|counter_3_0:comb_3|flip_flop_T:comb_3" File: /home/davi/Projects/last_pbl/src/counters/counter_3_0.v Line: 10
+Info (12128): Elaborating entity "decoder_2_4" for hierarchy "driver_display:comb_3|decoder_2_4:comb_4" File: /home/davi/Projects/last_pbl/src/drivers/driver_display.v Line: 17
+Info (12128): Elaborating entity "mux_32_2_8" for hierarchy "driver_display:comb_3|mux_32_2_8:comb_9" File: /home/davi/Projects/last_pbl/src/drivers/driver_display.v Line: 24
+Info (12128): Elaborating entity "mux_4_2_1" for hierarchy "driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_3" File: /home/davi/Projects/last_pbl/src/mux/mux_32_2_8.v Line: 11
+Info (12128): Elaborating entity "mux_2_1_1" for hierarchy "driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_3|mux_2_1_1:comb_3" File: /home/davi/Projects/last_pbl/src/mux/mux_4_2_1.v Line: 13
+Info (12128): Elaborating entity "units_decoder" for hierarchy "units_decoder:comb_4" File: /home/davi/Projects/last_pbl/src/main_groups/display_group.v Line: 25
+Warning (10034): Output port "segments[7]" at units_decoder.v(4) has no driver File: /home/davi/Projects/last_pbl/src/decoders/units_decoder.v Line: 4
+Info (12128): Elaborating entity "states_decoder" for hierarchy "states_decoder:comb_5" File: /home/davi/Projects/last_pbl/src/main_groups/display_group.v Line: 30
+Warning (10034): Output port "segments[7]" at states_decoder.v(4) has no driver File: /home/davi/Projects/last_pbl/src/decoders/states_decoder.v Line: 4
+Info (12128): Elaborating entity "dozens_decoder" for hierarchy "dozens_decoder:comb_6" File: /home/davi/Projects/last_pbl/src/main_groups/display_group.v Line: 35
+Warning (10034): Output port "segments[7]" at dozens_decoder.v(4) has no driver File: /home/davi/Projects/last_pbl/src/decoders/dozens_decoder.v Line: 4
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "segments[7]" is stuck at GND File: /home/davi/Projects/last_pbl/src/main_groups/display_group.v Line: 8
+Info (21057): Implemented 48 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 12 output pins
+    Info (21061): Implemented 27 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 83 warnings
+    Info: Peak virtual memory: 336 megabytes
+    Info: Processing ended: Sun Jul 21 23:48:37 2024
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:00:45
+
+

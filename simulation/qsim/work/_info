@@ -1,0 +1,195 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/davi/Projects/last_pbl/simulation/qsim
+vdisplay_group
+Z1 !s110 1721617061
+!i10b 1
+!s100 1F^l`GWYOz77X;WNb]1@c2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IBWc>VkAkUW@3h=WdN[3=X1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1721617059
+Z4 8last_pbl.vo
+Z5 Flast_pbl.vo
+!i122 28
+L0 32 1246
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1721617061.000000
+Z8 !s107 last_pbl.vo|
+Z9 !s90 -work|work|last_pbl.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vdisplay_group_vlg_vec_tst
+R1
+!i10b 1
+!s100 8Dd3P>:O_Qg?HLfM?ga^;1
+R2
+IL8G@k2k;;lKF[GW:QhCWJ0
+R3
+R0
+w1721617056
+Z12 8Waveform.vwf.vt
+Z13 FWaveform.vwf.vt
+!i122 29
+L0 30 90
+R6
+r1
+!s85 0
+31
+R7
+Z14 !s107 Waveform.vwf.vt|
+Z15 !s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R10
+R11
+virrigation_group
+Z16 !s110 1721606072
+!i10b 1
+!s100 _iTj]UW1R?iz?djz^]l041
+R2
+I>Ja`6JjmPG;;K[?=XghZ60
+R3
+R0
+w1721606069
+R4
+R5
+!i122 22
+L0 32 324
+R6
+r1
+!s85 0
+31
+!s108 1721606071.000000
+R8
+R9
+!i113 1
+R10
+R11
+virrigation_group_vlg_vec_tst
+R16
+!i10b 1
+!s100 gT7k5NUe?BIPi=SnN3RVY1
+R2
+I3Wz4P[kBik9f=7R`[cT9C0
+R3
+R0
+w1721606066
+R12
+R13
+!i122 23
+Z17 L0 30 80
+R6
+r1
+!s85 0
+31
+!s108 1721606072.000000
+R14
+R15
+!i113 1
+R10
+R11
+vstate_machine_group
+Z18 !s110 1721593968
+!i10b 1
+!s100 A7i[ZnizT2X2<Y>GjAF`B0
+R2
+IRnC2mQhgPCkN[^e[m3_0X1
+R3
+R0
+w1721593966
+R4
+R5
+!i122 8
+L0 32 1058
+R6
+r1
+!s85 0
+31
+Z19 !s108 1721593968.000000
+R8
+R9
+!i113 1
+R10
+R11
+vstate_machine_group_vlg_vec_tst
+R18
+!i10b 1
+!s100 ;hW6A_W;ag`dY5_?B3^9>3
+R2
+IOekS0@CG_fmzEgBf=B_zK0
+R3
+R0
+w1721593963
+R12
+R13
+!i122 9
+L0 30 70
+R6
+r1
+!s85 0
+31
+R19
+R14
+R15
+!i113 1
+R10
+R11
+vwater_box_group
+Z20 !s110 1721597224
+!i10b 1
+!s100 o]7P>?07>_RF90obi8CFV3
+R2
+IWC4?<a@6hYfZO7:n=`8bi1
+R3
+R0
+w1721597219
+R4
+R5
+!i122 20
+L0 32 456
+R6
+r1
+!s85 0
+31
+Z21 !s108 1721597224.000000
+R8
+R9
+!i113 1
+R10
+R11
+vwater_box_group_vlg_vec_tst
+R20
+!i10b 1
+!s100 Q;VdIcb3LzBQ4MZAamFz>1
+R2
+Ie@C24lhUmiZB1hHCnMG8h1
+R3
+R0
+w1721597216
+R12
+R13
+!i122 21
+R17
+R6
+r1
+!s85 0
+31
+R21
+R14
+R15
+!i113 1
+R10
+R11

@@ -1,0 +1,520 @@
+|display_group
+state[0] => state[0].IN1
+state[1] => state[1].IN1
+dozens[0] => dozens[0].IN1
+dozens[1] => dozens[1].IN1
+units[0] => units[0].IN1
+units[1] => units[1].IN1
+units[2] => units[2].IN1
+units[3] => units[3].IN1
+_840_Hz => _840_Hz.IN1
+digits[0] << driver_display:comb_3.port5
+digits[1] << driver_display:comb_3.port5
+digits[2] << driver_display:comb_3.port5
+digits[3] << driver_display:comb_3.port5
+segments[0] << driver_display:comb_3.port6
+segments[1] << driver_display:comb_3.port6
+segments[2] << driver_display:comb_3.port6
+segments[3] << driver_display:comb_3.port6
+segments[4] << driver_display:comb_3.port6
+segments[5] << driver_display:comb_3.port6
+segments[6] << driver_display:comb_3.port6
+segments[7] << driver_display:comb_3.port6
+
+
+|display_group|driver_display:comb_3
+display_clock => display_clock.IN1
+digitA[0] => digitA[0].IN1
+digitA[1] => digitA[1].IN1
+digitA[2] => digitA[2].IN1
+digitA[3] => digitA[3].IN1
+digitA[4] => digitA[4].IN1
+digitA[5] => digitA[5].IN1
+digitA[6] => digitA[6].IN1
+digitA[7] => digitA[7].IN1
+digitB[0] => digitB[0].IN1
+digitB[1] => digitB[1].IN1
+digitB[2] => digitB[2].IN1
+digitB[3] => digitB[3].IN1
+digitB[4] => digitB[4].IN1
+digitB[5] => digitB[5].IN1
+digitB[6] => digitB[6].IN1
+digitB[7] => digitB[7].IN1
+digitC[0] => digitC[0].IN1
+digitC[1] => digitC[1].IN1
+digitC[2] => digitC[2].IN1
+digitC[3] => digitC[3].IN1
+digitC[4] => digitC[4].IN1
+digitC[5] => digitC[5].IN1
+digitC[6] => digitC[6].IN1
+digitC[7] => digitC[7].IN1
+digitD[0] => digitD[0].IN1
+digitD[1] => digitD[1].IN1
+digitD[2] => digitD[2].IN1
+digitD[3] => digitD[3].IN1
+digitD[4] => digitD[4].IN1
+digitD[5] => digitD[5].IN1
+digitD[6] => digitD[6].IN1
+digitD[7] => digitD[7].IN1
+digits[0] <= decoder_2_4:comb_4.port1
+digits[1] <= decoder_2_4:comb_4.port2
+digits[2] <= decoder_2_4:comb_4.port3
+digits[3] <= decoder_2_4:comb_4.port4
+segments[0] <= mux_32_2_8:comb_9.port5
+segments[1] <= mux_32_2_8:comb_9.port5
+segments[2] <= mux_32_2_8:comb_9.port5
+segments[3] <= mux_32_2_8:comb_9.port5
+segments[4] <= mux_32_2_8:comb_9.port5
+segments[5] <= mux_32_2_8:comb_9.port5
+segments[6] <= mux_32_2_8:comb_9.port5
+segments[7] <= mux_32_2_8:comb_9.port5
+
+
+|display_group|driver_display:comb_3|counter_3_0:comb_3
+clock => clock.IN2
+preset[0] => preset[0].IN1
+preset[1] => preset[1].IN1
+reset[0] => reset[0].IN1
+reset[1] => reset[1].IN1
+count[0] <= flip_flop_T:comb_3.port4
+count[1] <= flip_flop_T:comb_4.port4
+
+
+|display_group|driver_display:comb_3|counter_3_0:comb_3|flip_flop_T:comb_3
+clock => Q~reg0.CLK
+toggle => Q~reg0.ENA
+preset => Q~reg0.ADATA
+reset => Q~reg0.ALOAD
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|counter_3_0:comb_3|flip_flop_T:comb_4
+clock => Q~reg0.CLK
+toggle => Q~reg0.ENA
+preset => Q~reg0.ADATA
+reset => Q~reg0.ALOAD
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|decoder_2_4:comb_4
+data[0] => comb.IN0
+data[0] => comb.IN0
+data[0] => comb.IN0
+data[0] => comb.IN0
+data[1] => comb.IN1
+data[1] => comb.IN1
+data[1] => comb.IN1
+data[1] => comb.IN1
+a <= comb.DB_MAX_OUTPUT_PORT_TYPE
+b <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+d <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+a[4] => a[4].IN1
+a[5] => a[5].IN1
+a[6] => a[6].IN1
+a[7] => a[7].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+b[4] => b[4].IN1
+b[5] => b[5].IN1
+b[6] => b[6].IN1
+b[7] => b[7].IN1
+c[0] => c[0].IN1
+c[1] => c[1].IN1
+c[2] => c[2].IN1
+c[3] => c[3].IN1
+c[4] => c[4].IN1
+c[5] => c[5].IN1
+c[6] => c[6].IN1
+c[7] => c[7].IN1
+d[0] => d[0].IN1
+d[1] => d[1].IN1
+d[2] => d[2].IN1
+d[3] => d[3].IN1
+d[4] => d[4].IN1
+d[5] => d[5].IN1
+d[6] => d[6].IN1
+d[7] => d[7].IN1
+key[0] => key[0].IN8
+key[1] => key[1].IN8
+x[0] <= mux_4_2_1:comb_3.port5
+x[1] <= mux_4_2_1:comb_4.port5
+x[2] <= mux_4_2_1:comb_5.port5
+x[3] <= mux_4_2_1:comb_6.port5
+x[4] <= mux_4_2_1:comb_7.port5
+x[5] <= mux_4_2_1:comb_8.port5
+x[6] <= mux_4_2_1:comb_9.port5
+x[7] <= mux_4_2_1:comb_10.port5
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_3
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+key[0] => key[0].IN2
+key[1] => key[1].IN1
+x <= mux_2_1_1:comb_5.port3
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_3|mux_2_1_1:comb_3
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_3|mux_2_1_1:comb_4
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_3|mux_2_1_1:comb_5
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_4
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+key[0] => key[0].IN2
+key[1] => key[1].IN1
+x <= mux_2_1_1:comb_5.port3
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_4|mux_2_1_1:comb_3
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_4|mux_2_1_1:comb_4
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_4|mux_2_1_1:comb_5
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_5
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+key[0] => key[0].IN2
+key[1] => key[1].IN1
+x <= mux_2_1_1:comb_5.port3
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_5|mux_2_1_1:comb_3
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_5|mux_2_1_1:comb_4
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_5|mux_2_1_1:comb_5
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_6
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+key[0] => key[0].IN2
+key[1] => key[1].IN1
+x <= mux_2_1_1:comb_5.port3
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_6|mux_2_1_1:comb_3
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_6|mux_2_1_1:comb_4
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_6|mux_2_1_1:comb_5
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_7
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+key[0] => key[0].IN2
+key[1] => key[1].IN1
+x <= mux_2_1_1:comb_5.port3
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_7|mux_2_1_1:comb_3
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_7|mux_2_1_1:comb_4
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_7|mux_2_1_1:comb_5
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_8
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+key[0] => key[0].IN2
+key[1] => key[1].IN1
+x <= mux_2_1_1:comb_5.port3
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_8|mux_2_1_1:comb_3
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_8|mux_2_1_1:comb_4
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_8|mux_2_1_1:comb_5
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_9
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+key[0] => key[0].IN2
+key[1] => key[1].IN1
+x <= mux_2_1_1:comb_5.port3
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_9|mux_2_1_1:comb_3
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_9|mux_2_1_1:comb_4
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_9|mux_2_1_1:comb_5
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_10
+a => a.IN1
+b => b.IN1
+c => c.IN1
+d => d.IN1
+key[0] => key[0].IN2
+key[1] => key[1].IN1
+x <= mux_2_1_1:comb_5.port3
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_10|mux_2_1_1:comb_3
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_10|mux_2_1_1:comb_4
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|driver_display:comb_3|mux_32_2_8:comb_9|mux_4_2_1:comb_10|mux_2_1_1:comb_5
+a => aux[0].IN0
+b => aux[1].IN0
+key => aux[0].IN1
+key => aux[1].IN1
+x <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|units_decoder:comb_4
+units[0] => units[0].IN1
+units[1] => units[1].IN1
+units[2] => units[2].IN1
+units[3] => units[3].IN1
+segments[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segments[7] <= <GND>
+
+
+|display_group|units_decoder:comb_4|decoder_2_4:comb_3
+data[0] => comb.IN0
+data[0] => comb.IN0
+data[0] => comb.IN0
+data[0] => comb.IN0
+data[1] => comb.IN1
+data[1] => comb.IN1
+data[1] => comb.IN1
+data[1] => comb.IN1
+a <= comb.DB_MAX_OUTPUT_PORT_TYPE
+b <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+d <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|units_decoder:comb_4|decoder_2_4:comb_4
+data[0] => comb.IN0
+data[0] => comb.IN0
+data[0] => comb.IN0
+data[0] => comb.IN0
+data[1] => comb.IN1
+data[1] => comb.IN1
+data[1] => comb.IN1
+data[1] => comb.IN1
+a <= comb.DB_MAX_OUTPUT_PORT_TYPE
+b <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+d <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|states_decoder:comb_5
+state[0] => state[0].IN1
+state[1] => state[1].IN1
+segments[0] <= decoder_2_4:comb_3.port4
+segments[1] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= decoder_2_4:comb_3.port2
+segments[4] <= <GND>
+segments[5] <= <GND>
+segments[6] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segments[7] <= <GND>
+
+
+|display_group|states_decoder:comb_5|decoder_2_4:comb_3
+data[0] => comb.IN0
+data[0] => comb.IN0
+data[0] => comb.IN0
+data[0] => comb.IN0
+data[1] => comb.IN1
+data[1] => comb.IN1
+data[1] => comb.IN1
+data[1] => comb.IN1
+a <= comb.DB_MAX_OUTPUT_PORT_TYPE
+b <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c <= comb.DB_MAX_OUTPUT_PORT_TYPE
+d <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display_group|dozens_decoder:comb_6
+dozens[0] => comb.IN0
+dozens[0] => segments[4].DATAIN
+dozens[0] => comb.IN0
+dozens[1] => comb.IN1
+dozens[1] => segments[6].DATAIN
+dozens[1] => comb.IN1
+segments[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= <GND>
+segments[2] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= dozens[0].DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= dozens[1].DB_MAX_OUTPUT_PORT_TYPE
+segments[7] <= <GND>
+
+
